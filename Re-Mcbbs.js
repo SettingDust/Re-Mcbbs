@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Re-Mcbbs
 // @namespace    undefined
-// @version      0.1
+// @version      0.2
 // @description  the old
 // @author       SettingDust
 // @include      *mcbbs.net/*

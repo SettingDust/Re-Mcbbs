@@ -13,7 +13,6 @@ $(function () {
     //修改标题
     document.title = " Minecraft(我的世界)中文论坛 - Mcbbs";
     $("[src='template/mcbbs/image/logo_sc.png']").attr("src", "http://i.imgur.com/8WUBLPS.png");
-
     //主体背景颜色
     css += [
         "#hd .wp {",
@@ -238,10 +237,10 @@ $(function () {
                 "  height: 320px;",
                 "  width: 670px;",
                 "  overflow: hidden;",
-                "}",
+                "}"
             ].join("\n");
         }
-        if (url.endsWith("forum.php")) {
+        if (url === "http://www.mcbbs.net/forum.php") {
             //修改侧边栏
             css += [
                 "#forum_index_right .frame {",
@@ -252,6 +251,33 @@ $(function () {
                 "}"
             ].join("\n");
             $(".bm.bmw.cl").css("background", "#D6BE96");
+        }
+    } else if (url.includes("http://www.mcbbs.net/misc.php?mod=faq")) {
+        //修改背景
+        css += [
+            "#wp .wp {",
+            "  background: none;",
+            "}",
+            ".tbn {",
+            "  background: #D6BE96",
+            "}",
+            ".lum ul {",
+            "  background: #D6BE96 !important",
+            "}"
+        ].join("\n");
+        if (url === "http://www.mcbbs.net/misc.php?mod=faq") {
+            css += [
+                ".bm {",
+                "  background: none;",
+                "}"
+            ].join("\n");
+        }
+        if (new RegExp("mod=faq&action=faq&id=\d*").test(url)) {
+            css += [
+                ".bm {",
+                "  background: #D6BE96;",
+                "}"
+            ].join("\n");
         }
     }
     $("<style></style>").text(css).appendTo($("head"));

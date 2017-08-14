@@ -104,7 +104,7 @@ $(function () {
         "  padding: 0;",
         "  height: 57px;",
         "  line-height: 56px;",
-        "  background: none;",
+        "  background: none !important;",
         "}",
         "#nv .nv_ul li:last-child a {",
         "  border: none;",
